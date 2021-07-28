@@ -45,7 +45,7 @@ def folder_to_csv(path=DEFAULT_DATA_PATH, filename=DEFAULT_CSV_FILENAME):
             index += 1
     
     # writing to csv file
-    df.to_csv(filename, index=False)
+    df.to_csv(filename, index=False, header=None)
 
 def str_to_array(s):
     return np.asarray([int(binary) for binary in s.split(',')])
@@ -61,7 +61,7 @@ def main():
     folder_to_csv(path=DEFAULT_DATA_PATH, filename=DEFAULT_CSV_FILENAME)
     
     # Task 2: display images from csv files
-    df = pd.read_csv(DEFAULT_CSV_FILENAME)
+    df = pd.read_csv(DEFAULT_CSV_FILENAME, names=['label', 'array'])
     for i in range(2):
         array = df.loc[i, 'array']
         show_img(array)

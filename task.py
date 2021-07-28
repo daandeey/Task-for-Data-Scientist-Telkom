@@ -45,10 +45,24 @@ def folder_to_csv(path='Data/', filename='images.csv'):
     # writing to csv file
     df.to_csv(filename, index=False)
 
+def str_to_array(s):
+    return np.asarray([int(binary) for binary in s.split(',')])
+
+def show_img(array, size=NEW_SIZE):
+    img_arr = str_to_array(array).reshape((*size, -1))
+    plt.imshow(img_arr)
+    plt.show()
+
 def main():
     # Task 1: write images numeric representation into csv file
     # output file will be 'images.csv'
     folder_to_csv(path='Data/', filename='images.csv')
+    
+    # Task 2: display images from csv files
+    df = pd.read_csv('images.csv')
+    for i in range(2):
+        array = df.loc[i, 'array']
+        show_img(array)
 
 if __name__ == "__main__":
     main()

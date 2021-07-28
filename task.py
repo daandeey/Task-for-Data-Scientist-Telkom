@@ -7,9 +7,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from os import listdir
-from os.path import isfile, join
+from os.path import join
 
 NEW_SIZE = (100, 100)
+DEFAULT_DATA_PATH = 'Data/'
+DEFAULT_CSV_FILENAME = 'images.csv'
 
 def file_to_array(file, image_size=NEW_SIZE):
     # read image as numeric array representation
@@ -20,7 +22,7 @@ def file_to_array(file, image_size=NEW_SIZE):
     
     return list(image)
 
-def folder_to_csv(path='Data/', filename='images.csv'):
+def folder_to_csv(path=DEFAULT_DATA_PATH, filename=DEFAULT_CSV_FILENAME):
     folder = ['drum/', 'guitar/']
     
     # init a data frame
@@ -55,11 +57,11 @@ def show_img(array, size=NEW_SIZE):
 
 def main():
     # Task 1: write images numeric representation into csv file
-    # output file will be 'images.csv'
-    folder_to_csv(path='Data/', filename='images.csv')
+    # output file will be DEFAULT_CSV_FILENAME
+    folder_to_csv(path=DEFAULT_DATA_PATH, filename=DEFAULT_CSV_FILENAME)
     
     # Task 2: display images from csv files
-    df = pd.read_csv('images.csv')
+    df = pd.read_csv(DEFAULT_CSV_FILENAME)
     for i in range(2):
         array = df.loc[i, 'array']
         show_img(array)

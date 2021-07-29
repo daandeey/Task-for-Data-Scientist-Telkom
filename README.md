@@ -11,7 +11,7 @@ From the csv file that has been created, extract the array and show the image.
 Make sure your drum and guitar folder is in right path (in this case: Data folder). Install all the dependencies. Then, run the python file and a csv file will be built and images will be shown. 
 ```
 pip install -r requirements.txt
-python task.py
+python '.\Dandy Arif Rahman.py'
 ```
 
 To change the image size, data folder path, and csv files. Please change the value of these global variables in task.py.

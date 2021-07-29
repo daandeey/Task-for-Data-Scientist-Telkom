@@ -8,8 +8,9 @@ Given images of drums and guitars. Write a program to convert those images into 
 From the csv file that has been created, extract the array and show the image.
 
 ## How to Run
-Make sure your drum and guitar folder is in right path (in this case: Data folder). Then, run the python file and a csv file will be built and images will be shown. 
+Make sure your drum and guitar folder is in right path (in this case: Data folder). Install all the dependencies. Then, run the python file and a csv file will be built and images will be shown. 
 ```
+pip install -r requirements.txt
 python task.py
 ```
 
